@@ -12,6 +12,7 @@
 
 BEGIN {
 # print "######################## INICIO ########################"
+
 # declaracion de textos constantes
 fuente = "engramListID.ini"
 }
