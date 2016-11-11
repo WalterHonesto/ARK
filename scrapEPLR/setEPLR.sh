@@ -1,32 +1,39 @@
 #!/usr/bin/awk -f
+
+#############################################################################
+#
+# Programación Amateur si las hay
+#
+# Provisto un archivo y una fuente
+
 BEGIN {print "######################## INICIO ########################"
 # declaracion de textos constantes
+fuente = "engramListID.ini"
 }
 
 {
-print "##############################################################################################################################################################"
-print "ANTES  : " $1
+# print "##############################################################################################################################################################"
+# print "ANTES  : " $1
 nuevalinea = $1
 
 # En el archivo game.ini busca el nombre de la busqueda del engram delimitado por _ _C y el final del engram delimitado por _C
 inigame = match(nuevalinea, /\"*\"/)
 fingame = match(nuevalinea, "C\"")
-print inigame " - " fingame
+# print inigame " - " fingame
 
 # Si encuentra el match
 if (inigame) {
-	# Extrae el engram y envia el wget a la wiki
+	# Extrae el engram
 	eng = substr(nuevalinea,inigame+1,fingame-inigame)
 	print "ENGRAM: " eng
 
-	# Procesa el html
-	file = "todosEngramID.ini"
-	while(( getline line < file ) > 0 ) {
+	# Procesa el archivo fuente
+	while(( getline line < fuente ) > 0 ) {
 		# Obtiene el engram que matchee
 		inisearch = match (line,eng)
 
 		if (inisearch){
-			print "MATCH  : " line
+			# print "MATCH  : " line
 
 			# Obtiene la ubicacion de los valores
 			epini = match (line,/EngramPointCost/)
@@ -59,10 +66,11 @@ if (inigame) {
 }
 
 # Imprimo a archivo la línea final
-print "DESPUES: " nuevalinea
+# print "DESPUES: " nuevalinea
 print nuevalinea > "salida.ini"
 
-close(file)
+# Cierra el archivo fuente para volver a comenzar
+close(fuente)
 }
 
 END {print "######################## FIN ########################"}
