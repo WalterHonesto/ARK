@@ -4,9 +4,14 @@
 #
 # Programación Amateur si las hay
 #
-# Provisto un archivo y una fuente
+# Provisto un archivo y una fuente busca el nombre del Engram en el archivo,
+# posteriormente busca el match en la fuente y obtiene los valores de EP y LR
+# para luego ingresar los valores en el archivo
+#
+############################################################################
 
-BEGIN {print "######################## INICIO ########################"
+BEGIN {
+# print "######################## INICIO ########################"
 # declaracion de textos constantes
 fuente = "engramListID.ini"
 }
@@ -73,4 +78,6 @@ print nuevalinea > "salida.ini"
 close(fuente)
 }
 
-END {print "######################## FIN ########################"}
+END {
+#print "######################## FIN ########################"
+}
