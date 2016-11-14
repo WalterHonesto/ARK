@@ -1,0 +1,4 @@
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_AdvancedSniperBullet_C",EngramHidden=false,EngramPointCost=16,EngramLevelRequirement=70,RemoveEngramPreReq=true)
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_AirConditioner_C",EngramHidden=false,EngramPointCost=21,EngramLevelRequirement=55,RemoveEngramPreReq=true)+
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_AlarmTrap_C",EngramHidden=false,EngramPointCost=7,EngramLevelRequirement=20,RemoveEngramPreReq=true)+
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_AnvilBench_C",EngramHidden=false,EngramPointCost=18,EngramLevelRequirement=25,RemoveEngramPreReq=true)
